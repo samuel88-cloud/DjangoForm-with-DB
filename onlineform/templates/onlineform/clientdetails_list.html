@@ -1,0 +1,57 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+<div class="col-lg-8 offset-lg-2 content-section">
+    <div class="row">
+    <div class="col-md-4 leftcolumn">
+                <p>Hers's a list of Clients!</p>
+        
+    </div>
+    <div class="col-md-8 rightcolumn">
+        <ol>
+        {% for client in clients %}
+    <article class="media">
+              <div class="client">
+                <a class="mr-2" href="{% url 'client-detail' client.id %}"><li>{{ client.full_name }}</li></a>
+              </div>
+    </article>
+
+    
+    {%endfor%}
+</ol>
+</div>
+</div>
+          <style>
+              .client
+              {
+                  padding: 5px;
+              }
+              .rightcolumn
+              {
+                  padding: 50px;
+              }
+              
+              .leftcolumn
+              {
+                  padding: 50px;
+                  background-color: rgb(228, 65, 65)!important;
+                  color: white;
+                  font-size: larger;
+              }
+            
+            .content-section {
+                background: #ffffff;
+                border: 1px solid #dddddd;
+                border-radius: 3px;
+                margin-bottom: 20px;
+                margin-top: 150px;
+            }
+            .border-bottom {
+                border-bottom: 1px solid #dee2e6!important;
+                color: white;
+            }
+          </style>
+{% endblock %}

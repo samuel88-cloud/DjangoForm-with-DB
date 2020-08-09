@@ -1,0 +1,53 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+<div class="col-lg-8 offset-lg-2 content-section">
+    <div class="row">
+    <div class="col-md-4 leftcolumn">
+        <p>Here's the Client details!</p>
+
+    </div>
+    <div class="col-md-8 rightcolumn">
+        <h1>Title: {{ object.full_name }}</h1>
+
+        <p><strong>Full Name:</strong> {{ object.full_name }}</p> <!-- author detail link not yet defined -->
+        <p><strong>Phone Number:</strong> {{ object.phone_number }}</p>
+        <p><strong>Client Value:</strong> {{ object.client_value }}$</p> 
+        <p><strong>Email:</strong> {{ object.email }}</p>  
+        <p><strong>Website:</strong> {{ object.website }}</p>
+
+
+              
+    </article>
+</div>
+</div>
+          <style>
+              .rightcolumn
+              {
+                  padding: 50px;
+              }
+              
+              .leftcolumn
+              {
+                  padding: 50px;
+                  background-color: rgb(228, 65, 65)!important;
+                  color: white;
+                  font-size: larger;
+              }
+            
+            .content-section {
+                background: #ffffff;
+                border: 1px solid #dddddd;
+                border-radius: 3px;
+                margin-bottom: 20px;
+                margin-top: 150px;
+            }
+            .border-bottom {
+                border-bottom: 1px solid #dee2e6!important;
+                color: white;
+            }
+          </style>
+{% endblock %}
